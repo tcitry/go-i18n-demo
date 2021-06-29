@@ -15,9 +15,13 @@ goi18n extract
 3. 根据英文生成中文模板
 
 ```
-touch translate.zh.toml && goi18n merge active.en.toml translate.zh.toml
+goi18n merge active.*.toml
 ```
 
-4. 根据中文模板进行翻译，最后 rename 为`active.zh.toml`
+4. 根据中文模板进行翻译，最后进行合并
+
+```
+goi18n merge active.*.toml translate.*.toml
+```
 
 (踩了一坑：命名为 active.cn.toml 的话翻译无效)
